@@ -79,4 +79,14 @@ public class BinaryTree {
         postOrder(node.getRight(), nodeList);
         nodeList.add(node);
     }
+
+    public int getHeight() {
+        return findHeight(this.root);
+    }
+
+    private int findHeight(BinaryNode node) {
+        if(node==null)
+            return 0;
+        return Math.max(findHeight(node.getLeft()), findHeight(node.getRight()))+1;
+    }
 }

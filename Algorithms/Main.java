@@ -12,9 +12,11 @@ import Tree.CreateTree;
 public class Main {
     public static void main(String[] args) {
         CreateTree tree = new CreateTree();
-        print(tree.bt.inOrderTraversal());
-        print(tree.bt.preOrderTraversal());
-        print(tree.bt.postOrderTraversal());
+        print("InOrder Traversal is : "+tree.bt.inOrderTraversal());
+        print("Pre Order Traversal is : "+tree.bt.preOrderTraversal());
+        print("Post Order Traversal is : "+tree.bt.postOrderTraversal());
+
+        print("Height is : "+tree.bt.getHeight());
     }
 
     public static void print(Object obj) {
