@@ -13,6 +13,8 @@ public class Main {
     public static void main(String[] args) {
         CreateTree tree = new CreateTree();
         print(tree.bt.inOrderTraversal());
+        print(tree.bt.preOrderTraversal());
+        print(tree.bt.postOrderTraversal());
     }
 
     public static void print(Object obj) {

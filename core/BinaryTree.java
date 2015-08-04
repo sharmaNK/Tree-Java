@@ -37,4 +37,46 @@ public class BinaryTree {
         nodeList.add(node);
         inOrder(node.getRight(), nodeList);
     }
+
+    /**
+     * Algorithm Preorder(tree)
+     1. Visit the root.
+     2. Traverse the left subtree, i.e., call Preorder(left-subtree)
+     3. Traverse the right subtree, i.e., call Preorder(right-subtree)
+     * @return List of Nodes in the order they are visited.
+     */
+    public List<BinaryNode> preOrderTraversal() {
+        List<BinaryNode> nodeList = new ArrayList<BinaryNode>();
+        preOrder(this.root, nodeList);
+        return nodeList;
+    }
+
+    private void preOrder(BinaryNode node, List<BinaryNode> nodeList) {
+        if(node==null)
+            return;
+        nodeList.add(node);
+        preOrder(node.getLeft(), nodeList);
+        preOrder(node.getRight(), nodeList);
+    }
+
+    /**
+     * Algorithm Postorder(tree)
+     1. Traverse the left subtree, i.e., call Postorder(left-subtree)
+     2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+     3. Visit the root.
+     * @return List of Nodes in the order they are visited.
+     */
+    public List<BinaryNode> postOrderTraversal() {
+        List<BinaryNode> nodeList = new ArrayList<BinaryNode>();
+        postOrder(this.root, nodeList);
+        return nodeList;
+    }
+
+    private void postOrder(BinaryNode node, List<BinaryNode> nodeList) {
+        if(node==null)
+            return;
+        postOrder(node.getLeft(), nodeList);
+        postOrder(node.getRight(), nodeList);
+        nodeList.add(node);
+    }
 }
