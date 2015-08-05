@@ -80,13 +80,23 @@ public class BinaryTree {
         nodeList.add(node);
     }
 
+    /**
+     *
+     * @return the height of this tree
+     */
     public int getHeight() {
         return findHeight(this.root);
     }
 
+    /**
+     * Calculates height of tree with given node as a root
+     * @param node Root of sub-tree
+     * @return height of any sub-tree
+     */
     private int findHeight(BinaryNode node) {
         if(node==null)
             return 0;
         return Math.max(findHeight(node.getLeft()), findHeight(node.getRight()))+1;
     }
+
 }

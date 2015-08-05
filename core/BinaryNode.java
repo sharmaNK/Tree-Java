@@ -5,13 +5,14 @@ package Tree.core;
  */
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
  * Binary Node is Node of a binary Tree.
  * Each node will have at max two childrens aka left and right.
  */
-public class BinaryNode {
+public class BinaryNode implements Comparator{
 
     private BinaryNode left;
     private BinaryNode right;
@@ -85,5 +86,11 @@ public class BinaryNode {
         return (String)this.getValue();
     }
 
+    @Override
+    public int compare(Object o1, Object o2) {
+        BinaryNode node1 = (BinaryNode) o1;
+        BinaryNode node2 = (BinaryNode) o2;
 
+        return Integer.valueOf(node1.getValue().toString()).compareTo(Integer.valueOf(node2.getValue().toString()));
+    }
 }
