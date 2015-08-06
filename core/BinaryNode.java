@@ -91,6 +91,24 @@ public class BinaryNode implements Comparator{
         BinaryNode node1 = (BinaryNode) o1;
         BinaryNode node2 = (BinaryNode) o2;
 
-        return Integer.valueOf(node1.getValue().toString()).compareTo(Integer.valueOf(node2.getValue().toString()));
+        return ((String)node1.getValue()).compareTo((String)node2.getValue());
     }
+
+    @Override
+    public boolean equals(Object node) {
+        return ((BinaryNode) node).compareValues(this.getValue())==0;
+    }
+
+    public boolean equalsValue(Object value) {
+        return this.getValue().equals(value);
+    }
+
+    public boolean equalsContent(String value) {
+        return this.getValue().toString().equals(value);
+    }
+
+    public int compareValues(Object val) {
+        return ((String)this.getValue()).compareTo((String) val);
+    }
+
 }

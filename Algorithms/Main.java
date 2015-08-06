@@ -12,11 +12,15 @@ import Tree.CreateTree;
 public class Main {
     public static void main(String[] args) {
         CreateTree tree = new CreateTree();
-        print("InOrder Traversal is : "+tree.bt.inOrderTraversal());
-        print("Pre Order Traversal is : "+tree.bt.preOrderTraversal());
-        print("Post Order Traversal is : "+tree.bt.postOrderTraversal());
+        print("InOrder Traversal is : "+tree.bst.inOrderTraversal());
+        print("Pre Order Traversal is : "+tree.bst.preOrderTraversal());
+        print("Post Order Traversal is : "+tree.bst.postOrderTraversal());
 
-        print("Height is : "+tree.bt.getHeight());
+        print("Height is : "+tree.bst.getHeight());
+
+        print("Sorted order : "+tree.bst.sort());
+
+        print("Search D2 "+tree.bst.searchNode("D2"));
     }
 
     public static void print(Object obj) {

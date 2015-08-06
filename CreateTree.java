@@ -4,6 +4,7 @@ package Tree;
  * Created by Nandkishore on 8/4/2015.
  */
 
+import Tree.core.BST;
 import Tree.core.BinaryNode;
 import Tree.core.BinaryTree;
 
@@ -12,12 +13,13 @@ import Tree.core.BinaryTree;
  */
 public class CreateTree {
     public BinaryTree bt;
+    public BST bst;
     public CreateTree() {
         bt = new BinaryTree();
-
+        bst = new BST();
         BinaryNode root = new BinaryNode("A");
 
-        bt.setRoot(root);
+        //bt.setRoot(root);
 
         BinaryNode node1 = new BinaryNode("B1");
         BinaryNode node2 = new BinaryNode("B2");
@@ -43,6 +45,7 @@ public class CreateTree {
         BinaryNode node15 = new BinaryNode("I1");
         BinaryNode node16 = new BinaryNode("I2");
 
+/*
         root.setLeft(node1);
         root.setRight(node2);
 
@@ -66,5 +69,23 @@ public class CreateTree {
 
         node7.setLeft(node15);
         node10.setRight(node16);
+*/
+        bst.insertNode(root);
+        bst.insertNode(node1);
+        bst.insertNode(node2);
+        bst.insertNode(node3);
+        bst.insertNode(node4);
+        bst.insertNode(node5);
+        bst.insertNode(node6);
+        bst.insertNode(node7);
+        bst.insertNode(node8);
+        bst.insertNode(node9);
+        bst.insertNode(node10);
+        bst.insertNode(node11);
+        bst.insertNode(node12);
+        bst.insertNode(node13);
+        bst.insertNode(node14);
+        bst.insertNode(node15);
+        bst.insertNode(node16);
     }
 }

@@ -23,9 +23,15 @@ public class BST extends BinaryTree{
      * @param node
      */
     public void insertNode(BinaryNode node) {
+        if(this.getRoot()==null) {
+            this.setRoot(node);
+            return;
+        }
         insert(this.getRoot(), node);
     }
     private void insert(BinaryNode root, BinaryNode node) {
+        if(node==null)
+            return;
         if(root.compare(root,node) > 0) {
             if(root.getLeft()==null) {
                 root.setLeft(node);
@@ -46,6 +52,33 @@ public class BST extends BinaryTree{
         }
     }
 
+    /**
+     * Search for a value in this BST. It take log(N)
+     * @param value
+     * @return
+     */
+    public boolean searchNode(Object value) {
+        return search(this.getRoot(), value);
+    }
+
+    /**
+     * Search for the value in sub tree with given param as a root of subtree
+     * @param root Root of subtree
+     * @param value Value to compare with
+     * @return True if value is found in tree else False
+     */
+    private boolean search(BinaryNode root, Object value) {
+        if(root == null)
+            return false;
+        if(root.compareValues(value)==0) {
+            return true;
+        }
+        else if(root.compareValues(value) > 0) {
+            return search(root.getLeft(), value);
+        }
+        else
+            return search(root.getRight(), value);
+    }
 
     /**
      * Sort the BST. Technically Inorder Traversal returns a sorted List of BST nodes
